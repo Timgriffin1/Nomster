@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+   
+   <%= link_to 'Nomster', root_path, class: 'navbar-brand' %>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -10,7 +13,16 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+  <li class="nav-item">
+    <%= link_to new_place_path, class: 'nav-link' do %>
+      <i class="fa fa-plus-circle"></i>
+      New Place
+    <% end %>
+  </li>
+</ul>
   </head>
+
 
   <body>
 

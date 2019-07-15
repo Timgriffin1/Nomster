@@ -88,6 +88,8 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.11.1)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     foundation-rails (6.5.3.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0)
@@ -229,6 +231,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   country-select
+  font-awesome-rails
   foundation-rails
   jbuilder (~> 2.5)
   jquery-rails

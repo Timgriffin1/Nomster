@@ -74,3 +74,4 @@ gem 'will_paginate-bootstrap'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'country-select'
+gem "font-awesome-rails"
