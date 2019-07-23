@@ -13,16 +13,18 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <nav>
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-  <li class="nav-item">
-    <%= link_to new_place_path, class: 'nav-link' do %>
-      <i class="fa fa-plus-circle"></i>
+      <li class="nav-item">
+        <%= link_to new_place_path, class: 'nav-link' do %>
+        <i class="fa fa-plus-circle"></i>
       New Place
-    <% end %>
+      <% end %>
+
   </li>
-</ul>
- <ul class="navbar-nav">
-      <% if user_signed_in? %>
+
+    <% if user_signed_in? %>
         <li class="nav-item">
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
         </li>
@@ -30,26 +32,25 @@
         <li class="nav-item">
           <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
         </li>
-             <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+            
       <% end %>
-    </ul>
-    </div>
-  </head>
+</ul>
+  
+    
 
 
   <body>
-    </nav>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <nav>
+    <% if notice.present? %>
+  <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+    
    </nav>
 
-<% if notice.present? %>
-  <p class="alert alert-info"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+
 
 
     <%= yield %>
