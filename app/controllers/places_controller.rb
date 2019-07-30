@@ -19,10 +19,12 @@ class PlacesController < ApplicationController
   end
 
   def show
+ 
      @place = Place.find(params[:id])
   end
 
   def edit
+ 
    @place = Place.find(params[:id])
 
    if @place.user != current_user
@@ -37,23 +39,29 @@ class PlacesController < ApplicationController
     end
 
   def destroy
+    byebug
   @place = Place.find(params[:id])
+
+  puts @place.name
   if @place.user != current_user
     return render plain: 'Not Allowed', status: :forbidden
   end
 
-      if @place.valid?
-    redirect_to root_path
+  if @place
+    Place.destroy(@place.id)
+    redirect_to '/'
   else
-    render :edit, status: :unprocessable_entity
+    puts "Line 52 was hit on Places Controller."
+   # render :edit, status: :unprocessable_entity
   end
-   @place.destroy
-   redirect_to root_path
+   
+   # redirect_to root_path
   end
 
   private
 
   def place_params
+ 
     params.require(:place).permit(:name, :description, :address)
   end
 
