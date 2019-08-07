@@ -40,7 +40,7 @@ class PlacesController < ApplicationController
     end
 
   def destroy
-    byebug
+  
   @place = Place.find(params[:id])
 
   puts @place.name
