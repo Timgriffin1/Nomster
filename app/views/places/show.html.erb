@@ -103,4 +103,26 @@
 </div>
 
 <% end %>
+
 </div>
+
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :picture %>
+  <%= f.input :caption %>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+
+  <% end %>
+
+h1>Photos</h1>
+
+<% @place.photos.each do |photo| %>
+  <div>
+    <% if photo.picture.present? %>
+      <b><%= image_tag 'photo.picture.url' %><b> -
+  <% end %>
+    <blockquote>
+      <b><%= photo.caption %></b> 
+      <small><%= photo.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
