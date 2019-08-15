@@ -118,7 +118,7 @@
   <% @place.photos.each do |photo| %>
   <div>
     <% if photo.picture.present? %>
-    <b><%= image_tag 'photo.picture.url' %> <b>
+    <b><%= image_tag photo.picture.url %> <b>
   
   <% end %>  
 
