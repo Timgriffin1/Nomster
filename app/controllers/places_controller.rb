@@ -29,7 +29,7 @@ class PlacesController < ApplicationController
  
    @place = Place.find(params[:id])
    puts "!!!#{@place}"
-   binding.pry
+   binding.try
 
    if @place.user != current_user
     return render plain: 'Not Allowed', status: :forbidden
@@ -62,8 +62,7 @@ class PlacesController < ApplicationController
 
   def place_params
  
-    params.require(:place).permit(:name, :description, :address)
-    params.require(:place).permit(:name, :description, :address, :photos)
+     params.require(:place).permit(:name, :description, :address, :photos)
   end
 
 end
